@@ -1,5 +1,5 @@
 /* ============================================
-   SEGUROS MARTINEZ - ESTILOS PRINCIPALES
+   MARTINEZ PAS - ESTILOS PRINCIPALES
    Identidad: Profesional · Industrial · Premium
    ============================================ */
 
@@ -56,7 +56,9 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px; }
+.logo { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-main { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: 0.5px; }
+.logo-sub { font-size: 0.7rem; font-weight: 500; color: rgba(255,255,255,0.75); letter-spacing: 0.8px; text-transform: uppercase; }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
   color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.8rem;
@@ -231,6 +233,8 @@ img { max-width: 100%; display: block; }
   .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .trust-number { font-size: 2.2rem; }
   .card.wide { grid-column: auto; }
+  .logo-sub { display: none; }
+  .logo-main { font-size: 1.15rem; }
 }
 @media (min-width: 769px) {
   .hero-ctas { flex-direction: row; }
