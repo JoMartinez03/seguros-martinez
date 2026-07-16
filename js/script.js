@@ -1,3 +1,12 @@
+const WHATSAPP_PHONE = "5492991234567";
+const WHATSAPP_MESSAGE = `Hola, quiero solicitar una cotización de seguro.
+
+Tipo de seguro:
+Localidad:
+Nombre:`;
+
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -52,5 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
             if (!isActive) btn.setAttribute('aria-expanded', 'true');
         });
+    });
+
+    document.querySelectorAll('.whatsapp-link').forEach(link => {
+        link.href = WHATSAPP_URL;
+        link.setAttribute("aria-label", "Solicitar cotización por WhatsApp");
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
     });
 });

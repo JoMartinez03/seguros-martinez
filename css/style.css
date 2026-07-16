@@ -222,6 +222,109 @@ img { max-width: 100%; display: block; }
 .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
+/* === CTA INTERMEDIO === */
+.cta-intermediate-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--deep-blue-light) 0%, var(--deep-blue) 100%);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-intermediate-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(232, 119, 34, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-intermediate-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.cta-intermediate-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.cta-intermediate-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  text-wrap: balance;
+}
+.cta-intermediate-content .btn-whatsapp {
+  box-shadow: 0 4px 15px rgba(232, 119, 34, 0.3);
+}
+
+/* === QUE NECESITAS PARA COTIZAR === */
+.requirements-section {
+  padding: 100px 0;
+  background: var(--off-white);
+}
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.requirement-card {
+  background: var(--white);
+  padding: 2.2rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.requirement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-orange);
+  opacity: 0;
+  transition: var(--transition);
+}
+.requirement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+.requirement-card:hover::before {
+  opacity: 1;
+}
+.requirement-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(232, 119, 34, 0.1);
+  color: var(--accent-orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.requirement-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--carbon);
+  margin-bottom: 0.75rem;
+}
+.requirement-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
   .nav-links { position: fixed; top: 80px; left: 0; width: 100%; background: var(--deep-blue); flex-direction: column; padding: 2rem; clip-path: circle(0% at 100% 0); transition: clip-path 0.5s ease; align-items: center; height: calc(100vh - 80px); overflow-y: auto; display: flex; }
@@ -235,6 +338,9 @@ img { max-width: 100%; display: block; }
   .card.wide { grid-column: auto; }
   .logo-sub { display: none; }
   .logo-main { font-size: 1.15rem; }
+  .requirements-section { padding: 60px 0; }
+  .requirements-grid { gap: 1rem; margin-top: 2rem; }
+  .cta-intermediate-section { padding: 60px 0; }
 }
 @media (min-width: 769px) {
   .hero-ctas { flex-direction: row; }
